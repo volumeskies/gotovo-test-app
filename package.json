@@ -4,10 +4,10 @@
   "description": "Menu updating &amp; editing using React + TypeScript + Uploadcare based on Firebase + Firebase Auth backend with Firebase Cloud Databases",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "watch": "webpack --mode development --watch",
-    "start": "webpack-dev-server -mode development --open"
+    "dev": "cross-env NODE-ENV=development webpack --mode development",
+    "build": "cross-env NODE-ENV=production webpack --mode production",
+    "watch": "cross-env NODE-ENV=development webpack --mode development --watch",
+    "start": "cross-env NODE-ENV=production webpack-dev-server --mode production --open"
   },
   "repository": {
     "type": "git",
@@ -21,26 +21,34 @@
   "homepage": "https://github.com/volumeskies/gotovo-test-app#readme",
   "devDependencies": {
     "@babel/core": "^7.11.0",
+    "@babel/plugin-transform-runtime": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.2",
     "css-loader": "^4.2.0",
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
+    "react-router": "^5.2.0",
     "sass-loader": "^9.0.2",
+    "terser-webpack-plugin": "^3.0.8",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@babel/runtime": "^7.11.0",
     "@types/react": "^16.9.44",
     "@types/react-dom": "^16.9.8",
+    "@types/react-router-dom": "^5.1.5",
+    "firebase": "^7.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.0"
+    "react-scripts": "^3.4.0",
+    "regenerator-runtime": "^0.13.7"
   }
 }
